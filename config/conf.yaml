@@ -1,14 +1,14 @@
 hydra:
   run:
-    dir: ./outputs/${now:%Y-%m-%d}/${exp_name}-${now:%H-%M-%S}
+    dir: /root/results/phone-seg-results/outputs/${now:%Y-%m-%d}/${exp_name}-${now:%H-%M-%S}
 exp_name: null
-buckeye_path: /Users/brian/Desktop/code/phone-seg/dataset/buckeye_run
-timit_path: /Users/brian/Desktop/code/phone-seg/dataset/TIMIT_run/data
-data: buckeye
+buckeye_path: /root/data/phone-seg/dataset/buckeye_run
+timit_path: /root/data/phone-seg/dataset/TIMIT_run/data
+data: timit
 val_ratio: 0.1  # Ratio of training set to use for timit validation
 train_percent: 1.0 # Percentage of training data to use 
 num_workers: 5
-base_ckpt_path: /Users/brian/Desktop/code/phone-seg/ssl_model/wav2vec_small.pt
+base_ckpt_path: /root/models/ssl_model/wav2vec_small.pt
 seed: 0
 mode: finetune
 label_dist_threshold: 1 # 20ms tolerance

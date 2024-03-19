@@ -8,7 +8,7 @@ import wandb
 
 def train_test(cfg, model, classifier, trainloader, valloader, testloader, logger):
     wandb.init(
-    project="test1",
+    project="phoneme-segmentation-timit",
     )
     device = model.parameters().__next__().device
     logger.info("TRAINING MODEL")
