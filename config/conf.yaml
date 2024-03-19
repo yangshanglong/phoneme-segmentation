@@ -1,0 +1,25 @@
+hydra:
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${exp_name}-${now:%H-%M-%S}
+exp_name: null
+buckeye_path: /Users/brian/Desktop/code/phone-seg/dataset/buckeye_run
+timit_path: /Users/brian/Desktop/code/phone-seg/dataset/TIMIT_run/data
+data: buckeye
+val_ratio: 0.1  # Ratio of training set to use for timit validation
+train_percent: 1.0 # Percentage of training data to use 
+num_workers: 5
+base_ckpt_path: /Users/brian/Desktop/code/phone-seg/ssl_model/wav2vec_small.pt
+seed: 0
+mode: finetune
+label_dist_threshold: 1 # 20ms tolerance
+print_interval: 10 # Train batches to print loss stats
+val_interval: 50 # Train batches to eval step
+optim_type: adam
+beta1: 0.9
+beta2: 0.999
+momentum: 0.9
+weight_decay: 0
+pos_weight: 1.0 # BCE loss weighting
+epochs: 50
+batch_size: 16
+lr: 0.0001
